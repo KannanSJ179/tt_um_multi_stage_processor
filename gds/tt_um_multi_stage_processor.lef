@@ -1,5 +1,5 @@
 VERSION 5.8 ;
-BUSBITCHARS "[]" ;
+BUSBITCHARS "<>" ;
 DIVIDERCHAR "/" ;
 
 MACRO tt_um_multi_stage_processor
