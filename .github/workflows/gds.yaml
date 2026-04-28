@@ -30,7 +30,6 @@ jobs:
         with:
           top_module: ${{ steps.top_module.outputs.TOP_MODULE }}
           gds_path: gds/${{ steps.top_module.outputs.TOP_MODULE }}.gds
-          lef_path: src/macro/yen_top.lef
           verilog_path: src/tt_um_multi_stage_processor.v
           pdk: sky130A
 
