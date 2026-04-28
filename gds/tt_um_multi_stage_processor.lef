@@ -7,6 +7,7 @@ MACRO tt_um_multi_stage_processor
   ORIGIN 0 0 ;
   SIZE 167 BY 108 ;
 
+  # Power
   PIN VPWR
     DIRECTION INOUT ;
     USE POWER ;
@@ -25,13 +26,182 @@ MACRO tt_um_multi_stage_processor
     END
   END VGND
 
-  PIN uo_out
+  # ======================
+  # ui[7:0] (inputs)
+  # ======================
+  PIN ui[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 5 10 7 12 ;
+    END
+  END ui[0]
+
+  PIN ui[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 10 10 12 12 ;
+    END
+  END ui[1]
+
+  PIN ui[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 15 10 17 12 ;
+    END
+  END ui[2]
+
+  PIN ui[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 20 10 22 12 ;
+    END
+  END ui[3]
+
+  PIN ui[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 25 10 27 12 ;
+    END
+  END ui[4]
+
+  PIN ui[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 30 10 32 12 ;
+    END
+  END ui[5]
+
+  PIN ui[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 35 10 37 12 ;
+    END
+  END ui[6]
+
+  PIN ui[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ; RECT 40 10 42 12 ;
+    END
+  END ui[7]
+
+  # ======================
+  # uo[7:0] (outputs)
+  # ======================
+  PIN uo[0]
     DIRECTION OUTPUT ;
     PORT
-      LAYER met2 ;
-      RECT 10 50 20 60 ;
+      LAYER met2 ; RECT 5 90 7 92 ;
     END
-  END uo_out
+  END uo[0]
+
+  PIN uo[1]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ; RECT 10 90 12 92 ;
+    END
+  END uo[1]
+
+  PIN uo[2]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ; RECT 15 90 17 92 ;
+    END
+  END uo[2]
+
+  PIN uo[3]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ; RECT 20 90 22 92 ;
+    END
+  END uo[3]
+
+  PIN uo[4]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ; RECT 25 90 27 92 ;
+    END
+  END uo[4]
+
+  PIN uo[5]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ; RECT 30 90 32 92 ;
+    END
+  END uo[5]
+
+  PIN uo[6]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ; RECT 35 90 37 92 ;
+    END
+  END uo[6]
+
+  PIN uo[7]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ; RECT 40 90 42 92 ;
+    END
+  END uo[7]
+
+  # ======================
+  # uio[7:0] (bidirectional)
+  # ======================
+  PIN uio[0]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 5 50 7 52 ;
+    END
+  END uio[0]
+
+  PIN uio[1]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 10 50 12 52 ;
+    END
+  END uio[1]
+
+  PIN uio[2]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 15 50 17 52 ;
+    END
+  END uio[2]
+
+  PIN uio[3]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 20 50 22 52 ;
+    END
+  END uio[3]
+
+  PIN uio[4]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 25 50 27 52 ;
+    END
+  END uio[4]
+
+  PIN uio[5]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 30 50 32 52 ;
+    END
+  END uio[5]
+
+  PIN uio[6]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 35 50 37 52 ;
+    END
+  END uio[6]
+
+  PIN uio[7]
+    DIRECTION INOUT ;
+    PORT
+      LAYER met2 ; RECT 40 50 42 52 ;
+    END
+  END uio[7]
 
 END tt_um_multi_stage_processor
 
