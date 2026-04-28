@@ -207,10 +207,9 @@ endmodule
 module tt_um_multi_stage_processor (
     input  wire [7:0] ui_in,
     output wire [7:0] uo_out,
-    input  wire [7:0] uio_in,
-    output wire [7:0] uio_out,
-    output wire [7:0] uio_oe,
-    input  wire       ena, clk, rst_n,
+    input  wire       ena,
+    input  wire       clk,
+    input  wire       rst_n,
     inout  wire       VPWR,
     inout  wire       VGND
 );
@@ -227,7 +226,7 @@ module tt_um_multi_stage_processor (
         .test_mode (ui_in[7]),
         .hold      (ui_in[3]),
         .mode_sel  (ui_in[2:0]),
-        .config    (uio_in[3:0]),     // dynamic config from dedicated input nibble
+        .config    (4'b0000),     // dynamic config from dedicated input nibble
         .debug_sel (ui_in[6:4]),
         .analog_in (1'b0),           // digital level of analog output
         .uo_out    (uo_out_int),
@@ -236,12 +235,6 @@ module tt_um_multi_stage_processor (
 
     assign uo_out = uo_out_int;
 
-    // uio_oe: upper nibble outputs debug data, lower nibble inputs (config)
-    assign uio_oe  = 8'b1111_0000;
-    assign uio_out = debug_int;       // full 8‑bit debug word (lower nibble not driven externally)
-
-    // Tie off truly unused pins to suppress synthesis warnings
-    wire _unused = &{uio_in[7:4]};
 endmodule
 
 `default_nettype wire
