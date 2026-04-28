@@ -11,64 +11,150 @@ MACRO tt_um_multi_stage_processor
   PIN VPWR
     DIRECTION INOUT ;
     USE POWER ;
-    PORT LAYER met1 ; RECT 0 103 167 108 ; END
+    PORT
+      LAYER met1 ;
+      RECT 0 103 167 108 ;
+    END
   END VPWR
 
   PIN VGND
     DIRECTION INOUT ;
     USE GROUND ;
-    PORT LAYER met1 ; RECT 0 0 167 5 ; END
+    PORT
+      LAYER met1 ;
+      RECT 0 0 167 5 ;
+    END
   END VGND
 
   # ui_in[7:0]
-  PIN ui_in[0] DIRECTION INPUT ; PORT LAYER met2 ; RECT 5 10 7 12 ; END END ui_in[0]
-  PIN ui_in[1] DIRECTION INPUT ; PORT LAYER met2 ; RECT 10 10 12 12 ; END END ui_in[1]
-  PIN ui_in[2] DIRECTION INPUT ; PORT LAYER met2 ; RECT 15 10 17 12 ; END END ui_in[2]
-  PIN ui_in[3] DIRECTION INPUT ; PORT LAYER met2 ; RECT 20 10 22 12 ; END END ui_in[3]
-  PIN ui_in[4] DIRECTION INPUT ; PORT LAYER met2 ; RECT 25 10 27 12 ; END END ui_in[4]
-  PIN ui_in[5] DIRECTION INPUT ; PORT LAYER met2 ; RECT 30 10 32 12 ; END END ui_in[5]
-  PIN ui_in[6] DIRECTION INPUT ; PORT LAYER met2 ; RECT 35 10 37 12 ; END END ui_in[6]
-  PIN ui_in[7] DIRECTION INPUT ; PORT LAYER met2 ; RECT 40 10 42 12 ; END END ui_in[7]
+  PIN ui_in[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 5 10 7 12 ;
+    END
+  END ui_in[0]
+
+  PIN ui_in[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 10 10 12 12 ;
+    END
+  END ui_in[1]
+
+  PIN ui_in[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 15 10 17 12 ;
+    END
+  END ui_in[2]
+
+  PIN ui_in[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 20 10 22 12 ;
+    END
+  END ui_in[3]
+
+  PIN ui_in[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 25 10 27 12 ;
+    END
+  END ui_in[4]
+
+  PIN ui_in[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 30 10 32 12 ;
+    END
+  END ui_in[5]
+
+  PIN ui_in[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 35 10 37 12 ;
+    END
+  END ui_in[6]
+
+  PIN ui_in[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 40 10 42 12 ;
+    END
+  END ui_in[7]
 
   # uo_out[7:0]
-  PIN uo_out[0] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 5 90 7 92 ; END END uo_out[0]
-  PIN uo_out[1] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 10 90 12 92 ; END END uo_out[1]
-  PIN uo_out[2] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 15 90 17 92 ; END END uo_out[2]
-  PIN uo_out[3] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 20 90 22 92 ; END END uo_out[3]
-  PIN uo_out[4] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 25 90 27 92 ; END END uo_out[4]
-  PIN uo_out[5] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 30 90 32 92 ; END END uo_out[5]
-  PIN uo_out[6] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 35 90 37 92 ; END END uo_out[6]
-  PIN uo_out[7] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 40 90 42 92 ; END END uo_out[7]
+  PIN uo_out[0]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 5 90 7 92 ;
+    END
+  END uo_out[0]
 
-  # uio_in[7:0]
-  PIN uio_in[0] DIRECTION INPUT ; PORT LAYER met2 ; RECT 5 30 7 32 ; END END uio_in[0]
-  PIN uio_in[1] DIRECTION INPUT ; PORT LAYER met2 ; RECT 10 30 12 32 ; END END uio_in[1]
-  PIN uio_in[2] DIRECTION INPUT ; PORT LAYER met2 ; RECT 15 30 17 32 ; END END uio_in[2]
-  PIN uio_in[3] DIRECTION INPUT ; PORT LAYER met2 ; RECT 20 30 22 32 ; END END uio_in[3]
-  PIN uio_in[4] DIRECTION INPUT ; PORT LAYER met2 ; RECT 25 30 27 32 ; END END uio_in[4]
-  PIN uio_in[5] DIRECTION INPUT ; PORT LAYER met2 ; RECT 30 30 32 32 ; END END uio_in[5]
-  PIN uio_in[6] DIRECTION INPUT ; PORT LAYER met2 ; RECT 35 30 37 32 ; END END uio_in[6]
-  PIN uio_in[7] DIRECTION INPUT ; PORT LAYER met2 ; RECT 40 30 42 32 ; END END uio_in[7]
+  PIN uo_out[1]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 10 90 12 92 ;
+    END
+  END uo_out[1]
 
-  # uio_out[7:0]
-  PIN uio_out[0] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 5 70 7 72 ; END END uio_out[0]
-  PIN uio_out[1] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 10 70 12 72 ; END END uio_out[1]
-  PIN uio_out[2] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 15 70 17 72 ; END END uio_out[2]
-  PIN uio_out[3] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 20 70 22 72 ; END END uio_out[3]
-  PIN uio_out[4] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 25 70 27 72 ; END END uio_out[4]
-  PIN uio_out[5] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 30 70 32 72 ; END END uio_out[5]
-  PIN uio_out[6] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 35 70 37 72 ; END END uio_out[6]
-  PIN uio_out[7] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 40 70 42 72 ; END END uio_out[7]
+  PIN uo_out[2]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 15 90 17 92 ;
+    END
+  END uo_out[2]
 
-  # uio_oe[7:0]
-  PIN uio_oe[0] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 5 50 7 52 ; END END uio_oe[0]
-  PIN uio_oe[1] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 10 50 12 52 ; END END uio_oe[1]
-  PIN uio_oe[2] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 15 50 17 52 ; END END uio_oe[2]
-  PIN uio_oe[3] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 20 50 22 52 ; END END uio_oe[3]
-  PIN uio_oe[4] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 25 50 27 52 ; END END uio_oe[4]
-  PIN uio_oe[5] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 30 50 32 52 ; END END uio_oe[5]
-  PIN uio_oe[6] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 35 50 37 52 ; END END uio_oe[6]
-  PIN uio_oe[7] DIRECTION OUTPUT ; PORT LAYER met2 ; RECT 40 50 42 52 ; END END uio_oe[7]
+  PIN uo_out[3]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 20 90 22 92 ;
+    END
+  END uo_out[3]
+
+  PIN uo_out[4]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 25 90 27 92 ;
+    END
+  END uo_out[4]
+
+  PIN uo_out[5]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 30 90 32 92 ;
+    END
+  END uo_out[5]
+
+  PIN uo_out[6]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 35 90 37 92 ;
+    END
+  END uo_out[6]
+
+  PIN uo_out[7]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 40 90 42 92 ;
+    END
+  END uo_out[7]
 
 END tt_um_multi_stage_processor
 
