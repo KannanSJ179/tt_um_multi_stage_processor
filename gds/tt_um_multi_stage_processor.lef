@@ -25,6 +25,14 @@ MACRO tt_um_multi_stage_processor
     END
   END VGND
 
+  PIN uo_out
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+      RECT 10 50 20 60 ;
+    END
+  END uo_out
+
 END tt_um_multi_stage_processor
 
 END LIBRARY
