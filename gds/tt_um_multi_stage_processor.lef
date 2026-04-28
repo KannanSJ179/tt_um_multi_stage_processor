@@ -1,0 +1,30 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO tt_um_multi_stage_processor
+  CLASS BLOCK ;
+  ORIGIN 0 0 ;
+  SIZE 167 BY 108 ;
+
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met1 ;
+      RECT 0 103 167 108 ;
+    END
+  END VPWR
+
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met1 ;
+      RECT 0 0 167 5 ;
+    END
+  END VGND
+
+END tt_um_multi_stage_processor
+
+END LIBRARY
