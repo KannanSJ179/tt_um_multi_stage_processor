@@ -205,8 +205,9 @@ endmodule
 //   lower nibble inputs dynamic config from uio_in[3:0]
 // -----------------------------------------------------------------------------
 module tt_um_multi_stage_processor (
-    input  wire [7:0] ui_in,
-    output wire [7:0] uo_out,
+    input  wire [7:0] ui,
+    output wire [7:0] uo,
+    inout wire [7:0] uio,
     input  wire       ena,
     input  wire       clk,
     input  wire       rst_n,
@@ -223,17 +224,18 @@ module tt_um_multi_stage_processor (
         .clk       (clk),
         .rst_n     (rst_n),
         .ena       (ena),
-        .test_mode (ui_in[7]),
-        .hold      (ui_in[3]),
-        .mode_sel  (ui_in[2:0]),
+        .test_mode (ui[7]),
+        .hold      (ui[3]),
+        .mode_sel  (ui[2:0]),
         .config    (4'b0000),     // dynamic config from dedicated input nibble
-        .debug_sel (ui_in[6:4]),
+        .debug_sel (ui[6:4]),
         .analog_in (1'b0),           // digital level of analog output
         .uo_out    (uo_out_int),
         .debug_out (debug_int)
     );
 
-    assign uo_out = uo_out_int;
+    assign uo = uo_out_int;
+    assign uio = 8'b00000000;
 
 endmodule
 
