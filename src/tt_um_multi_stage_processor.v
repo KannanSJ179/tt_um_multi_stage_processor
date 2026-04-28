@@ -198,22 +198,6 @@ module core_digital (
 
 endmodule
 
-// -----------------------------------------------------------------------------
-// Analog stub – blackbox for synthesis, pass‑through for simulation
-// -----------------------------------------------------------------------------
-module yen_top (
-    inout VDD, VSS,
-    input  analog_in,
-    output analog_out
-);
-    // SYNTHESIS‑SAFE BLACKBOX:
-    // During synthesis this module is empty → treated as an external macro.
-    // The real layout replaces it with the analogue cell.
-`ifndef SYNTHESIS
-    // Simulation only: simple pass‑through for standalone functional tests.
-    assign analog_out = analog_in;
-`endif
-endmodule
 
 // -----------------------------------------------------------------------------
 // TinyTapeout Top Wrapper
@@ -227,16 +211,10 @@ module tt_um_multi_stage_processor (
     output wire [7:0] uio_out,
     output wire [7:0] uio_oe,
     input  wire       ena, clk, rst_n,
-    inout  wire [7:0] ua,
-    inout  wire       VDD, VSS
+    inout  wire       VPWR,
+    inout  wire       VGND
 );
 
-    // ---- Analog blackbox (ua[1] = input, ua[0] = output) ----
-    yen_top analog_core (
-        .VDD(VDD), .VSS(VSS),
-        .analog_in (ua[1]),
-        .analog_out(ua[0])
-    );
 
     // ---- Digital core with analog feedback ----
     wire [7:0] uo_out_int;
@@ -251,7 +229,7 @@ module tt_um_multi_stage_processor (
         .mode_sel  (ui_in[2:0]),
         .config    (uio_in[3:0]),     // dynamic config from dedicated input nibble
         .debug_sel (ui_in[6:4]),
-        .analog_in (ua[0]),           // digital level of analog output
+        .analog_in (1'b0),           // digital level of analog output
         .uo_out    (uo_out_int),
         .debug_out (debug_int)
     );
@@ -263,8 +241,7 @@ module tt_um_multi_stage_processor (
     assign uio_out = debug_int;       // full 8‑bit debug word (lower nibble not driven externally)
 
     // Tie off truly unused pins to suppress synthesis warnings
-    wire _unused = &{uio_in[7:4], ua[7:2]};
-
+    wire _unused = &{uio_in[7:4]};
 endmodule
 
 `default_nettype wire
