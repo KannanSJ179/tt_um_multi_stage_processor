@@ -1,20 +1,20 @@
 # Tiny Tapeout project information
 project:
-  title:        "Multi-Stage Processor with Analog Feedback"
+  title:        "Multi-Stage Processor (Digital Version)"
   author:       "Kannan S J"
-  discord:      ""  
-  description:  "A high-utilization mixed-signal processor with FSM-driven datapath and analog feedback injection"
+  discord:      ""
+  description:  "A multi-stage FSM-driven digital datapath with counter, LFSR, and configurable processing pipeline"
   language:     "Verilog"
   clock_hz:     10000000
 
   tiles: "1x2"
 
-  analog_pins: 2
+  analog_pins: 0
   uses_3v3: false
 
   top_module:  "tt_um_multi_stage_processor"
 
-  source_files:        
+  source_files:
     - "tt_um_multi_stage_processor.v"
 
 # Pinout
@@ -49,9 +49,9 @@ pinout:
   uio[6]: "debug_out[6]"
   uio[7]: "debug_out[7]"
 
-  # Analog pins
-  ua[0]: "analog_out"
-  ua[1]: "analog_in"
+  # Analog pins (MUST BE EMPTY since analog_pins = 0)
+  ua[0]: ""
+  ua[1]: ""
   ua[2]: ""
   ua[3]: ""
   ua[4]: ""
